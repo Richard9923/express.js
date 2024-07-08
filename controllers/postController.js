@@ -31,6 +31,7 @@ export const getPost = (req, res, next) => {
         error.status = 404;
         return next(error);
     }
+    res.status(200).json(post);
 }
 
 // @desc Create new post
