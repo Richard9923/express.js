@@ -6,11 +6,15 @@ import { fileURLToPath } from 'url';
 import logger from './middleware/logger.js';
 import errorHandler from './middleware/error.js';
 import notFound from './middleware/notFound.js';
+
 const __filename = fileURLToPath(import.meta.url);
-const __dirname =dirname(__filename);
+const __dirname = path.dirname(__filename);
 const port = process.env.PORT || 8000;
 
 const app = express();
+
+// Setup static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Body parser middleware
 app.use(express.json());
