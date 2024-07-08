@@ -1,6 +1,5 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-
 
 let posts = [
     {id: 1, title: "Post one"},
